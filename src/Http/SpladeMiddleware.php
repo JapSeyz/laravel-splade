@@ -367,4 +367,9 @@ class SpladeMiddleware
     {
         return Blade::render('<x-splade-component is="confirm" /><x-splade-component is="toast-wrapper" />');
     }
+
+    public function terminate($request, $response)
+    {
+        $this->splade->reset();
+    }
 }
